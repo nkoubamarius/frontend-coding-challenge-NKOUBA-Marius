@@ -1,13 +1,20 @@
 import React from "react";
 import { OptionContainer, OptionH4 } from "./OptionElements";
 
-const Option = ({ Icon, title, color, number }) => {
+const Option = ({ Icon, title, color, number, days, owner }) => {
   return (
     <OptionContainer>
-      <Icon style={{ color: color }} />
-      <OptionH4>
-        {title}: {number}
-      </OptionH4>
+      {Icon && <Icon style={{ color: color }} />}
+
+      {title ? (
+        <OptionH4>
+          {title}: {number}
+        </OptionH4>
+      ) : (
+        <OptionH4>
+          Submitted {days} days ago by {owner}
+        </OptionH4>
+      )}
     </OptionContainer>
   );
 };
