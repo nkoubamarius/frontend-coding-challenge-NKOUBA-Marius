@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const NavbarContainer = styled.div`
+  background-color: white;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
