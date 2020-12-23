@@ -1,8 +1,15 @@
 import React from "react";
-import { NavbarContainer } from "./NavbarElements";
+import { NavbarContainer, NavbarLogo } from "./NavbarElements";
 
 const Navbar = () => {
-  return <NavbarContainer></NavbarContainer>;
+  return (
+    <NavbarContainer>
+      <NavbarLogo
+        src="https://pngimg.com/uploads/github/github_PNG15.png"
+        alt="Github logo"
+      />
+    </NavbarContainer>
+  );
 };
 
 export default Navbar;
