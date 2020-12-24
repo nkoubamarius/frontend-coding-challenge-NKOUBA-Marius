@@ -49,6 +49,12 @@ const Body = () => {
       {currentRepositories.map((repository) => (
         <Repository key={repository.node_id} repository={repository} />
       ))}
+
+      <Pagination
+        repositoriesPerPage={repositoriesPerPage}
+        totalRepositories={repositories.length}
+        paginate={paginate}
+      />
     </BodyContainer>
   );
 };

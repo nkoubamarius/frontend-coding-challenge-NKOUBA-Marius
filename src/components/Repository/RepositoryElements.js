@@ -29,7 +29,10 @@ export const RepositoryInfo = styled.div`
   align-items: flex-start;
   margin-left: 10px;
 `;
-export const RepositoryH2 = styled.h2``;
+export const RepositoryH2 = styled.h1`
+  color: gray;
+  margin-bottom: 3px;
+`;
 export const RepositoryP = styled.p``;
 export const RepositoryInfoBottom = styled.div`
   display: flex;
@@ -39,7 +42,7 @@ export const RepositoryInfoBottom = styled.div`
 export const AvatarItem = styled(Avatar)`
   height: 140px !important;
   width: 140px !important;
-  border: 2px solid white;
+  border: 4px solid gray;
 `;
 
 export const SubmittedItem = styled.p``;

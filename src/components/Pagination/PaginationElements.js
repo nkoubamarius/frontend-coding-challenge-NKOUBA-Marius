@@ -6,6 +6,7 @@ export const PaginationUl = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 `;
 
 export const PaginationLi = styled.li`
