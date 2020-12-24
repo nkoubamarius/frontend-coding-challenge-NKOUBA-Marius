@@ -40,8 +40,8 @@ export const RepositoryInfoBottom = styled.div`
 `;
 
 export const AvatarItem = styled(Avatar)`
-  height: 140px !important;
-  width: 140px !important;
+  height: 135px !important;
+  width: 135px !important;
   border: 4px solid gray;
 `;
 
