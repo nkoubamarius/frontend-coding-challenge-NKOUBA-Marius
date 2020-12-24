@@ -22,7 +22,7 @@ const Body = () => {
   return (
     <BodyContainer>
       {repositories.map((repository) => (
-        <Repository key={repository.node_id} data={repository} />
+        <Repository key={repository.node_id} repository={repository} />
       ))}
     </BodyContainer>
   );

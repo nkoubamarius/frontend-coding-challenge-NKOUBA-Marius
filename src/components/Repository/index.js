@@ -7,31 +7,39 @@ import {
   RepositoryInfo,
   RepositoryInfoBottom,
   RepositoryP,
-  SubmittedItem,
 } from "./RepositoryElements";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-const Repository = () => {
+const Repository = ({ repository }) => {
+  const {
+    id,
+    name,
+    description,
+    owner,
+    stargazers_count,
+    open_issues,
+    created_at,
+  } = repository;
   return (
     <RepositoryContainer>
-      <AvatarItem className="repository__avatar" />
+      <AvatarItem src={owner.avatar_url} className="repository__avatar" />
       <RepositoryInfo>
-        <RepositoryH2>nkouba</RepositoryH2>
-        <RepositoryP>description</RepositoryP>
+        <RepositoryH2>{name}</RepositoryH2>
+        <RepositoryP>{description}</RepositoryP>
         <RepositoryInfoBottom>
           <Option
             Icon={StarBorderIcon}
             title="Stars"
-            number="100"
+            number={stargazers_count}
             color="green"
           />
           <Option
             Icon={InfoOutlinedIcon}
             title="Issues"
-            number="100"
+            number={open_issues}
             color="red"
           />
-          <Option days="12" owner="tensorflow" color="red" />
+          <Option created_at={created_at} owner={owner.login} color="red" />
         </RepositoryInfoBottom>
       </RepositoryInfo>
     </RepositoryContainer>
