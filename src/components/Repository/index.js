@@ -12,7 +12,6 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 const Repository = ({ repository }) => {
   const {
-    id,
     name,
     description,
     owner,
@@ -39,7 +38,11 @@ const Repository = ({ repository }) => {
             number={open_issues}
             color="red"
           />
-          <Option created_at={created_at} owner={owner.login} color="red" />
+          <Option
+            created_at={created_at}
+            owner={owner.login}
+            color="transparent"
+          />
         </RepositoryInfoBottom>
       </RepositoryInfo>
     </RepositoryContainer>

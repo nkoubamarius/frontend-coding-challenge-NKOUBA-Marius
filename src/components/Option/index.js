@@ -1,10 +1,10 @@
 import React from "react";
-import { OptionContainer, OptionH4 } from "./OptionElements";
+import { DateDiv, OptionContainer, OptionH4, Owner } from "./OptionElements";
 import * as timeago from "timeago.js";
 
-const Option = ({ Icon, title, color, number, created_at, owner }) => {
+const Option = ({ Icon, title, color, number, created_at, owner, border }) => {
   return (
-    <OptionContainer>
+    <OptionContainer style={{ border: `3px solid ${color}` }}>
       {Icon && <Icon style={{ color: color }} />}
 
       {title ? (
@@ -14,9 +14,11 @@ const Option = ({ Icon, title, color, number, created_at, owner }) => {
       ) : (
         <OptionH4>
           Submitted&nbsp;
-          {timeago.format(new Date(created_at).toLocaleDateString())}&nbsp;
-          by&nbsp;
-          {owner}
+          <DateDiv>
+            {timeago.format(new Date(created_at).toLocaleDateString())}
+          </DateDiv>
+          &nbsp; by&nbsp;
+          <Owner>{owner}</Owner>
         </OptionH4>
       )}
     </OptionContainer>
