@@ -4,8 +4,7 @@ export const OptionContainer = styled.div`
   align-items: center;
   margin: 5px;
   color: gray;
-  padding: 10px;
-  padding-left: 0px;
+  padding: 5px 10px;
   cursor: pointer;
   font-size: 13px;
   border-radius: 10px;
