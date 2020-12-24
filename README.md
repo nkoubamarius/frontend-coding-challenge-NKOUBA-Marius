@@ -41,6 +41,12 @@ is a simple library that is used to format datetime with .... time ago
 
 #### - Usage: {timeago.format(new Date(created_at).toLocaleDateString())}
 
+## react-infinite-scroll-component (https://www.npmjs.com/package/react-infinite-scroll-component)
+
+A component to make all your infinite scrolling woes go away
+
+#### - Installatation : npm install --save react-infinite-scroll-component
+
 # Run the App
 
 to run the App you to be sure that you have Nodejs installed in your computer
