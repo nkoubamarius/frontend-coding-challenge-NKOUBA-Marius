@@ -1,7 +1,8 @@
 import React from "react";
 import { OptionContainer, OptionH4 } from "./OptionElements";
+import * as timeago from "timeago.js";
 
-const Option = ({ Icon, title, color, number, days, owner }) => {
+const Option = ({ Icon, title, color, number, created_at, owner }) => {
   return (
     <OptionContainer>
       {Icon && <Icon style={{ color: color }} />}
@@ -12,7 +13,10 @@ const Option = ({ Icon, title, color, number, days, owner }) => {
         </OptionH4>
       ) : (
         <OptionH4>
-          Submitted {days} days ago by {owner}
+          Submitted&nbsp;
+          {timeago.format(new Date(created_at).toLocaleDateString())}&nbsp;
+          by&nbsp;
+          {owner}
         </OptionH4>
       )}
     </OptionContainer>
