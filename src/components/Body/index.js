@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Repository from "../Repository";
-import { BodyContainer } from "./BodyElements";
+import { BodyContainer, Loading } from "./BodyElements";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getRepositories } from "../../API";
 
@@ -9,6 +9,7 @@ const Body = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    // Define loadRepositories function
     const loadRepositories = () => {
       getRepositories(page)
         .then((response) => {
@@ -20,6 +21,8 @@ const Body = () => {
           console.log(error);
         });
     };
+
+    //Execution of the function loadRepositories
     loadRepositories();
   }, [page]);
 
@@ -29,7 +32,9 @@ const Body = () => {
         dataLength={repositories.length} //This is important field to render the next data
         next={() => setPage((page) => page + 1)}
         hasMore={true}
-        loader={<h4>Loading...</h4>}
+        loader={
+          <Loading src="https://img1.picmix.com/output/stamp/normal/8/5/2/9/509258_fb107.gif" />
+        }
       >
         {repositories.map((repository) => (
           <Repository key={repository.node_id} repository={repository} />
